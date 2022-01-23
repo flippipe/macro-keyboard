@@ -1,0 +1,14 @@
+[Unit]
+Description=Actkbd: Daemon for X-independent shortcuts
+ConditionPathIsSymbolicLink=/dev/macrokeyboard
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=actkbd --device /dev/macrokeyboard --daemon --pidfile /tmp/actkbd.pid
+Type=forking
+PIDFile=/tmp/actkbd.pid
+Restart=on-failure
+RestartSec=3
+
+# possiveis opçoes para o actkbd
+# --showexec --showkey --syslog 

@@ -1,0 +1,4 @@
+# udev rules for macro-keyboard
+ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="SEM USB Keyboard", \
+MODE="0666", SYMLINK+="macrokeyboard", TAG+="systemd", ENV{SYSTEMD_USER_WANTS}="actkbd.service"
+
