@@ -61,19 +61,19 @@ function sendTeams() {
     # https://askubuntu.com/questions/695017/why-does-my-xdotool-key-command-not-work
 
 
-    echo "Sending to Window ${keyPressed} string $2" 
+    echo "Sending to Window ${1} string $2" 
 
     desktop=$(xdotool get_desktop)
     xdotool set_desktop "$(xdotool get_desktop_for_window "$WID")"
 
-    xdotool windowactivate --sync "${keyPressed}"  
-    xdotool windowfocus --sync "${keyPressed}"  
+    xdotool windowactivate --sync "${1}"  
+    xdotool windowfocus --sync "${1}"  
     sleep 0.5
-    xdotool key --window "${keyPressed}" Control_L+e 
+    xdotool key --window "${1}" Control_L+e 
     sleep 0.5
-    xdotool getwindowfocus windowfocus --sync type --window "${keyPressed}" "$2" 
+    xdotool getwindowfocus windowfocus --sync type --window "${1}" "$2" 
     sleep 0.5
-    xdotool key --window "${keyPressed}" KP_Enter 
+    xdotool key --window "${1}" KP_Enter 
 
     xdotool set_desktop "$desktop"
 }
@@ -94,7 +94,7 @@ function mpcStatus (){
 ##  Send commands to mpd
 #
 function mpcSend(){
-    mpc --quiet "${keyPressed}"  # >> /dev/null
+    mpc --quiet "${1}"  # >> /dev/null
 }
 
 
@@ -104,10 +104,10 @@ function mpcSend(){
 #
 function audio (){
 
-    echo "arg audio function ${keyPressed}" 
+    echo "arg audio function ${1}" 
 
     ## Case sensitivity in mpcSend and dbusSend is !!important!!
-    case ${keyPressed} in
+    case ${1} in
         play)
             mpcSend play
             #dbusSend Play
