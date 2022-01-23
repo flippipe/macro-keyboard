@@ -11,7 +11,7 @@ else
     keyPressed="${1}"
 fi
 
-echo "Pressed ${keyPressed} $MPC_HOST" 
+echo "Pressed ${keyPressed} $MPD_HOST" 
 
 ### 
 ##   FIX issues with keyboard different from the DE
