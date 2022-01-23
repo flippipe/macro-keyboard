@@ -2,6 +2,8 @@
 
 ⚠️ This configurations are all custom to my computer. Do not copy and past. ☢️
 
+Read [Building a Macro Keyboard](https://flippipe.github.io/post/building-a-macro-keyboard/) for more details about the files.
+
 ## Quick Deploy instructions
 
 ### Configure X11 to ignore Macro Keyboard
