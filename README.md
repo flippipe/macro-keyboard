@@ -6,7 +6,7 @@
 
 ### Configure X11 to ignore Macro Keyboard
 
-    # ln -s macro-keyboard/90-macrokeyboard.conf /usr/share/X11/xorg.conf.d/
+    # ln -s macro-keyboard/90-macrokeyboard.conf /usr/share/X11/xorg.conf.d/90-macrokeyboard.conf
 
 Restart X Server
 
@@ -14,7 +14,7 @@ Restart X Server
 
 ### Configure udev Rules
 
-    # ln -s macro-keyboard/90-macro-keyboard.rules /etc/udev/rules.d/
+    # ln -s macro-keyboard/90-macro-keyboard.rules /etc/udev/rules.d/90-macro-keyboard.rules
 
 Reload udev rules
 
@@ -22,7 +22,7 @@ Reload udev rules
 
 ### Configure SystemD
 
-    $ ln -s macro-keyboard/actkbd.service ~/.config/systemd/user/
+    $ ln -s macro-keyboard/actkbd.service ~/.config/systemd/user/actkbd.service
 
 Reload Systemd
 
@@ -31,4 +31,8 @@ Reload Systemd
 
 ### Add script to bin folder
 
-    $ ln -s macro-keyboard/keyboardScript.sh ~/bin/
+    $ ln -s macro-keyboard/keyboardScript.sh /usr/bin/keyboardScript.sh
+
+### Add actkbd config file
+
+    # ln -s macro-keyboard/actkbd.conf /etc/actkbd.conf
